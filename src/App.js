@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { GrTurbolinux } from "react-icons/gr";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="header">
+        <div className="brand">
+       <h1><i>< GrTurbolinux/></i>CryptoDaddy</h1>
+        </div>
+        <from>
+          <input className="inputField" type="text" placeholder="Type Your Coin..." />
+        </from>
+      </div>
     </div>
   );
 }
