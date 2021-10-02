@@ -36,7 +36,7 @@ function App() {
           <h1><i>< GrTurbolinux/></i>CryptoDaddy</h1>
         </div>
         <form>
-          <input className="inputField"  onChange={handleChange} type="text" placeholder="Type Your Coin..." />
+          <input className="inputField"  onChange={handleChange} type="text" placeholder="Type Your Currency...🔎" />
         </form>
       </div>
       <div className="coinsContainer">
@@ -54,6 +54,9 @@ function App() {
             />
           );
         })}
+      </div>
+      <div style={{padding:"15px",textAlign:'center'}}>
+          <p>© Created By :- <span style={{color:"#18f297"}}><a href="http://abdullahalsuad.netlify.app/" target="_blank" rel="noreferrer" style={{color:"#18f297",textDecoration:"none"}}>Abdullah Al Suad</a></span></p>
       </div>
     </div>
   );
