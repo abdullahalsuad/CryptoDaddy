@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./coin.module.css";
+import { GrFormDown,GrFormUp } from "react-icons/gr";
 
 const Coin = ({
   name,
@@ -22,12 +23,12 @@ const Coin = ({
       <p className={styles.coinVolume}>Volume (24H): ${volume.toLocaleString()}</p>
       {priceChange < 0 ? (
         <div className={styles.priceContainerDOWN}>
-          <i className="fas fa-angle-down fa-2x"></i>
+          <GrFormDown size="2em"/>
           <p className={styles.priceChange}>{priceChange.toFixed(2)}%</p>
         </div>
       ) : (
         <div className={styles.priceContainerUP}>
-          <i className="fas fa-angle-up fa-2x"></i>
+          <GrFormUp size="2em"/>
           <p className={styles.priceChange}>{priceChange.toFixed(2)}%</p>
         </div>
       )}
