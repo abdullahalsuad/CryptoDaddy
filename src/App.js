@@ -2,9 +2,13 @@ import axios from 'axios';
 import { useState,useEffect } from 'react';
 import './App.css';
 import { GrTurbolinux } from "react-icons/gr";
+import Coin from './components/Coin';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [coin,setCoin] = useState([]);
+  const [search, setSearch] = useState("");
+
 
   useEffect(() => {
     axios
@@ -16,6 +20,15 @@ function App() {
       .catch((error) => console.log(error))
 
   }, [])
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCoins = coin.filter((coin) =>
+  coin.name.toLowerCase().includes(search.toLowerCase())
+);
+
   return (
     <div>
       <div className="header">
@@ -23,8 +36,24 @@ function App() {
           <h1><i>< GrTurbolinux/></i>CryptoDaddy</h1>
         </div>
         <form>
-          <input className="inputField" type="text" placeholder="Type Your Coin..." />
+          <input className="inputField"  onChange={handleChange} type="text" placeholder="Type Your Coin..." />
         </form>
+      </div>
+      <div className="coinsContainer">
+      {filteredCoins.map((coin) => {
+          return (
+            <Coin
+              key={coin.id}
+              name={coin.name}
+              price={coin.current_price}
+              symbol={coin.symbol}
+              marketcap={coin.market_cap}
+              volume={coin.total_volume}
+              image={coin.image}
+              priceChange={coin.price_change_percentage_24h}
+            />
+          );
+        })}
       </div>
     </div>
   );
