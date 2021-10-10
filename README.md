@@ -1,2 +1,2 @@
 ## Live Server :- https://cryptodaddy.netlify.app/
-![alt text](Screenshot (41).png)
+![alt text](Screenshot.png)
